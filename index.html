@@ -1,121 +1,247 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alvien's Portfolio | Beranda</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <!-- Header & Navigasi -->
-        <header>
-            <nav class="navbar">
-                <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Beranda</a></li>
-                    <li><a href="projects.html">Proyek</a></li>
-                    <li><a href="contact.html">Kontak</a></li>
-                </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Pribadi Alviensyah Mohammad - Siswa Rekayasa Perangkat Lunak & Frontend Developer. Dibuat murni dengan HTML, CSS, dan JavaScript.">
+    <title>Alvien's Portfolio | Beranda</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e2b714'/><text y='.72em' x='50%' text-anchor='middle' font-size='56' font-family='system-ui,sans-serif' font-weight='bold' fill='%231e1e24'>A</text></svg>">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="dark-mode">
+    <!-- Header & Navigasi -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="projects.html">Proyek</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
 
-        <!-- Tombol Toggle Tema Modern -->
-        <button id="theme-toggle" class="btn-theme" type="button" aria-label="Ganti Tema">
-        <!-- Ikon Matahari (Tampil saat Dark Mode aktif untuk opsi ubah ke Terang) -->
-        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
+            <div class="nav-actions">
+                <!-- Tombol Toggle Tema Modern (JS Event 1: Click) -->
+                <button id="theme-toggle" class="btn-theme" type="button" aria-label="Ganti Tema">
+                    <!-- Ikon Matahari (Dark Mode) -->
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
 
-        <!-- Ikon Bulan (Tampil saat Light Mode aktif untuk opsi ubah ke Gelap) -->
-        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
+                    <!-- Ikon Bulan (Light Mode) -->
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <span id="theme-text">Mode Terang</span>
+                </button>
 
-        <span id="theme-text"></span>
-        </button>
-            </nav>
-        </header>
+                <!-- Tombol Menu Mobile Hamburger (JS Event 2: Click) -->
+                <button id="mobile-menu-btn" class="btn-mobile-menu" type="button" aria-label="Buka Navigasi" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Konten Utama -->
-        <main class="container">
-            <!-- Hero Section -->
-            <section class="Hero">
+    <!-- Konten Utama -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
                 <div class="hero-text">
-                    <p class="greeting">Halo, saya</p>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span>Terbuka untuk Kolaborasi & Proyek</span>
+                    </div>
+                    <p class="greeting" id="hero-greeting">Halo, saya</p>
                     <h1>Alviensyah Mohammad</h1>
                     <p class="bio">
-                        Fokus di bidang Rekayasa Perangkat Lunak, tidak hanya juga aktif sebagai Frontend Developer karena suka eksplorasi pembuatan aplikasi web. Selain itu bisa membangun antarmuka web yang rapi, responsif, dan interaktif.
+                        Fokus di bidang Rekayasa Perangkat Lunak dan aktif mengeksplorasi antarmuka web modern sebagai Frontend Developer. Senang membangun antarmuka website yang bersih, responsif, dan interaktif dengan kode murni yang rapi.
                     </p>
                     <div class="hero-actions">
                         <a href="projects.html" class="btn btn-primary">Lihat Karya</a>
                         <a href="contact.html" class="btn btn-secondary">Hubungi Saya</a>
                     </div>
                 </div>
-            </section>
+
+                <!-- Hero Visual: Kartu Kode Developer (Pure CSS/HTML) -->
+                <div class="hero-visual">
+                    <div class="code-card">
+                        <div class="code-card-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-card-title">developer.js</span>
+                        </div>
+                        <pre class="code-card-body"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">nama</span>: <span class="code-string">'Alviensyah Mohammad'</span>,
+  <span class="code-property">peran</span>: <span class="code-string">'Frontend Enthusiast'</span>,
+  <span class="code-property">stack</span>: [<span class="code-string">'HTML5'</span>, <span class="code-string">'CSS3'</span>, <span class="code-string">'JS ES6'</span>],
+  <span class="code-property">fokus</span>: <span class="code-string">'Clean Code & UX'</span>,
+  <span class="code-property">status</span>: <span class="code-string">'Ready to Code 🚀'</span>
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Ringkasan Skills -->
         <section class="skills-section">
-        <div class="section-title-wrap">
-            <h2>Skill Utama</h2>
-            <p>Fondasi teknologi yang saya kuasai dan gunakan dalam pengembangan web.</p>
-        </div>
-
-        <div class="skills-grid">
-            <!-- Kartu 1 -->
-            <div class="skills-card">
-            <div class="skill-header">
-                <span class="skill-dot"></span>
-                <h3>HTML5</h3>
-            </div>
-            <p class="skill-desc">Semantic Elements, Accessible Web (a11y), Form Validation.</p>
-            <span class="skill-tag">Structure</span>
+            <div class="section-title-wrap">
+                <h2>Skill & Keahlian Utama</h2>
+                <p>Fondasi teknologi dan standar pengembangan yang saya kuasai dalam membangun website modern.</p>
             </div>
 
-            <!-- Kartu 2 -->
-            <div class="skills-card">
-            <div class="skill-header">
-                <span class="skill-dot"></span>
-                <h3>CSS3</h3>
-            </div>
-            <p class="skill-desc">Flexbox, CSS Grid, Responsive Design, CSS Variables.</p>
-            <span class="skill-tag">Styling</span>
-            </div>
+            <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="skills-card">
+                    <div class="skill-header">
+                        <span class="skill-dot"></span>
+                        <h3>HTML5 Semantik</h3>
+                    </div>
+                    <p class="skill-desc">Struktur dokumen terstandar, aksesibilitas (a11y), validasi formulir native, dan SEO dasar.</p>
+                    <span class="skill-tag">Structure</span>
+                </div>
 
-            <!-- Kartu 3 -->
-            <div class="skills-card">
-            <div class="skill-header">
-                <span class="skill-dot"></span>
-                <h3>JavaScript</h3>
-            </div>
-            <p class="skill-desc">DOM Manipulation, Event Handling, LocalStorage, ES6+.</p>
-            <span class="skill-tag">Logic</span>
-            </div>
+                <!-- Skill 2 -->
+                <div class="skills-card">
+                    <div class="skill-header">
+                        <span class="skill-dot"></span>
+                        <h3>CSS3 Modern</h3>
+                    </div>
+                    <p class="skill-desc">Flexbox, CSS Grid, Custom Properties (Variables), animasi transisi, dan efek glassmorphism.</p>
+                    <span class="skill-tag">Styling</span>
+                </div>
 
-            <!-- Kartu 4 -->
-            <div class="skills-card">
-            <div class="skill-header">
-                <span class="skill-dot"></span>
-                <h3>Git & GitHub</h3>
+                <!-- Skill 3 -->
+                <div class="skills-card">
+                    <div class="skill-header">
+                        <span class="skill-dot"></span>
+                        <h3>Vanilla JavaScript</h3>
+                    </div>
+                    <p class="skill-desc">Manipulasi DOM, Event Handling, LocalStorage, Async/Fetch, dan penulisan sintaks ES6+ bersih.</p>
+                    <span class="skill-tag">Logic</span>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="skills-card">
+                    <div class="skill-header">
+                        <span class="skill-dot"></span>
+                        <h3>Git & GitHub</h3>
+                    </div>
+                    <p class="skill-desc">Version Control System terstruktur, pengelolaan branching, commit message rapi, dan repo hosting.</p>
+                    <span class="skill-tag">Tooling</span>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="skills-card">
+                    <div class="skill-header">
+                        <span class="skill-dot"></span>
+                        <h3>Responsive Design</h3>
+                    </div>
+                    <p class="skill-desc">Pendekatan Mobile-First, Media Queries presisi, dan tata letak dinamis di berbagai ukuran layar.</p>
+                    <span class="skill-tag">Layout</span>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="skills-card">
+                    <div class="skill-header">
+                        <span class="skill-dot"></span>
+                        <h3>UI/UX & Web Standard</h3>
+                    </div>
+                    <p class="skill-desc">Hierarki tipografi yang jelas, palet warna berharmoni, micro-interaction, dan kenyamanan pengguna.</p>
+                    <span class="skill-tag">Design</span>
+                </div>
             </div>
-            <p class="skill-desc">Version Control, Branching, Workflow Kolaborasi Tim.</p>
-            <span class="skill-tag">Tooling</span>
-            </div>
-        </div>
         </section>
-        </main>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Alvien's Portfolio, Dibuat dengan HTML dan CSS, JavaScript Murni.</p>
-        </footer>
+        <!-- Sorotan Proyek Pilihan (Mini Preview) -->
+        <section class="featured-section">
+            <div class="section-title-wrap flex-between">
+                <div>
+                    <h2>Sorotan Proyek</h2>
+                    <p>Beberapa karya pilihan yang telah berhasil dirancang dan dikembangkan.</p>
+                </div>
+                <a href="projects.html" class="link-arrow">Lihat Semua Proyek &rarr;</a>
+            </div>
 
-        <!-- Script -->
-        <script src="./js/main.js"></script>
-    </body>
+            <div class="projects-grid">
+                <!-- Proyek 1 -->
+                <article class="project-card">
+                    <div class="project-banner-placeholder">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <span class="badge">Web App</span>
+                        <h3>Wibupedia</h3>
+                        <p>Aplikasi web katalog anime interaktif dengan sistem pencarian dan navigasi detail informasi terlengkap.</p>
+                        <div class="tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>API Catalog</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="projects.html" class="btn-card-action btn-detail">Lihat Selengkapnya</a>
+                        <a href="https://github.com/Haku47" target="_blank" rel="noopener" class="btn-card-action btn-code">GitHub</a>
+                    </div>
+                </article>
+
+                <!-- Proyek 2 -->
+                <article class="project-card">
+                    <div class="project-banner-placeholder">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <span class="badge">Web App</span>
+                        <h3>TanyaPalapa AI</h3>
+                        <p>Antarmuka web asisten AI interaktif dengan tata letak chat responsif dan preset prompt cerdas.</p>
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>CSS Grid</span>
+                            <span>UI Design</span>
+                            <span>AI Agent</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="projects.html" class="btn-card-action btn-detail">Lihat Selengkapnya</a>
+                        <a href="https://github.com/Haku47" target="_blank" rel="noopener" class="btn-card-action btn-code">GitHub</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Tombol Scroll to Top (JS Event) -->
+    <button id="scroll-top-btn" class="btn-scroll-top" type="button" aria-label="Kembali ke atas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Alvien's Portfolio</strong> &mdash; Dibuat murni dengan HTML5, CSS3, &amp; Vanilla JavaScript tanpa library eksternal.</p>
+    </footer>
+
+    <!-- Script Utama -->
+    <script src="./js/main.js"></script>
+</body>
 </html>

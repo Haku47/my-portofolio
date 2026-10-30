@@ -1,100 +1,218 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alvien's Portfolio | Kontak</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <!-- Header & Navigasi -->
-        <header>
-            <nav class="navbar">
-                <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="projects.html">Proyek</a></li>
-                    <li><a href="contact.html" class="active">Kontak</a></li>
-                </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Alviensyah Mohammad untuk kolaborasi proyek web frontend dan diskusi pengembangan software.">
+    <title>Alvien's Portfolio | Kontak</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e2b714'/><text y='.72em' x='50%' text-anchor='middle' font-size='56' font-family='system-ui,sans-serif' font-weight='bold' fill='%231e1e24'>A</text></svg>">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="dark-mode">
+    <!-- Header & Navigasi -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="projects.html">Proyek</a></li>
+                <li><a href="contact.html" class="active">Kontak</a></li>
+            </ul>
 
-                <!-- Tombol Toggle Tema Modern -->
+            <div class="nav-actions">
+                <!-- Tombol Toggle Tema (JS Event: Click) -->
                 <button id="theme-toggle" class="btn-theme" type="button" aria-label="Ganti Tema">
-                <!-- Ikon Matahari (Tampil saat Dark Mode aktif untuk opsi ubah ke Terang) -->
-                <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
 
-                <!-- Ikon Bulan (Tampil saat Light Mode aktif untuk opsi ubah ke Gelap) -->
-                <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-
-                <span id="theme-text"></span>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <span id="theme-text">Mode Terang</span>
                 </button>
-            </nav>
-        </header>
 
-        <main class="container">
-            <section class="page-header">
-                <h1>Hubungi Saya</h1>
-                <p>Kirimkan pesan atau pertanyaan seputar kolaborasi melalui form di bawah ini.</p>
-            </section>
+                <!-- Tombol Menu Mobile Hamburger (JS Event: Click) -->
+                <button id="mobile-menu-btn" class="btn-mobile-menu" type="button" aria-label="Buka Navigasi" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-            <div class="contact-layout">
-                <!-- Fitur JS dengan Validasi dan Handler Form -->
-                <form id="contact-form" class="contact-form" novalidate>
-                    <div class="form-group">
-                        <label for="name">Nama Lengkap</label>
-                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+    <!-- Konten Utama -->
+    <main class="container">
+        <section class="page-header">
+            <h1>Hubungi Saya</h1>
+            <p>Tertarik untuk berkolaborasi, mendiskusikan peluang proyek, atau sekadar bertukar ide seputar teknologi web? Kirimkan pesan melalui formulir di bawah ini.</p>
+        </section>
+
+        <div class="contact-layout">
+            <!-- Formulir Kontak dengan Validasi JavaScript (JS Event: Submit & Input) -->
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" name="email" placeholder="contoh@domain.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label-row">
+                        <label for="message">Pesan Anda</label>
+                        <span id="char-counter" class="char-counter">0 / 300</span>
                     </div>
+                    <textarea id="message" name="message" rows="5" maxlength="300" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+                </div>
 
-                    <div class="form-group">
-                        <label for="email">Alamat Email</label>
-                        <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Pesan</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan Anda...." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit">
+                <button type="submit" class="btn-submit">
                     <span>Kirim Pesan</span>
-                        <svg class="send-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                        </svg>
-                    </button>
+                    <svg class="send-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
 
-                    <!-- Notifikasi Pesan terkirim melalui JS -->
-                    <p id="form-feedback" class="form-feedback"></p>
-                </form>
+                <!-- Feedback Validasi & Pengiriman Dinamis -->
+                <p id="form-feedback" class="form-feedback" role="alert"></p>
+            </form>
 
-                <!-- Informasi Tambahan -->
+            <!-- Informasi Kontak & Saluran Media Sosial -->
+            <div class="contact-info-wrap">
                 <aside class="contact-info">
-                    <h3>Saluran Lain</h3>
-                    <p>Anda juga bisa menemukan saya di: </p>
+                    <h3>Saluran Komunikasi</h3>
+                    <p>Hubungi saya secara langsung melalui email atau jelajahi profil media sosial saya:</p>
+
+                    <!-- Quick Email Box dengan Fitur Salin Clipboard (JS Event: Click) -->
+                    <div class="quick-email-card">
+                        <div>
+                            <span style="font-size: 0.72rem; color: var(--text-muted); display: block; text-transform: uppercase; font-weight: 700;">Email Utama</span>
+                            <span id="email-address" class="quick-email-text">hakupoi97@gmail.com</span>
+                        </div>
+                        <button id="btn-copy-email" class="btn-copy" type="button" aria-label="Salin alamat email">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span id="copy-btn-label">Salin</span>
+                        </button>
+                    </div>
+
+                    <!-- Tautan Sosial Media -->
                     <ul class="social-links">
-                        <li><strong>GitHub:</strong> <a href="https://github.com/Haku47" target="_blank" rel="noopener">github.com/Haku47</a></li>
-                        <li><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/alvien97/" target="_blank" rel="noopener">linkedin.com/in/alvien97/</a></li>
-                        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/alvien1939" target="_blank" rel="noopener">instagram.com/alvien1939</a></li>
+                        <li>
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            <div>
+                                <strong>GitHub:</strong>
+                                <a href="https://github.com/Haku47" target="_blank" rel="noopener">github.com/Haku47</a>
+                            </div>
+                        </li>
+                        <li>
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <div>
+                                <strong>LinkedIn:</strong>
+                                <a href="https://www.linkedin.com/in/alvien97/" target="_blank" rel="noopener">linkedin.com/in/alvien97/</a>
+                            </div>
+                        </li>
+                        <li>
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <div>
+                                <strong>Instagram:</strong>
+                                <a href="https://www.instagram.com/alvien1939" target="_blank" rel="noopener">instagram.com/alvien1939</a>
+                            </div>
+                        </li>
                     </ul>
                 </aside>
             </div>
-        </main>
+        </div>
 
-        <footer>
-            <p>&copy; 2026 Alvien's Portfolio, Dibuat dengan HTML dan CSS, JavaScript Murni.</p>
-        </footer>
+        <!-- Bagian FAQ Interaktif (JS Event: Click Accordion) -->
+        <section class="faq-section">
+            <div class="section-title-wrap">
+                <h2>Pertanyaan Umum (FAQ)</h2>
+                <p>Informasi seputar pengerjaan proyek dan arsitektur website ini.</p>
+            </div>
 
-        <script src="./js/main.js"></script>
-    </body>
+            <div class="accordion" id="faq-accordion">
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span>Apakah website ini dibuat murni tanpa framework &amp; library?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Benar! Seluruh halaman website ini dibangun 100% menggunakan HTML5 semantik, CSS3 modern dengan custom properties (variabel tema), dan Vanilla JavaScript murni tanpa ketergantungan library pihak ketiga seperti Bootstrap, Tailwind CSS, jQuery, maupun React.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span>Bagaimana fitur Dark/Light Mode bekerja?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Mode tema bekerja melalui JavaScript Event dengan mengubah class pada elemen <code>&lt;body&gt;</code> dan menyimpannya secara otomatis ke dalam <code>LocalStorage</code> browser. Pengaturan tema Anda akan tetap tersimpan meskipun berpindah halaman atau me-refresh tab.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span>Apakah Anda menerima tawaran freelance atau magang?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Tentu saja! Saya sangat antusias untuk berkolaborasi dalam proyek antarmuka website frontend, eksplorasi antarmuka UI/UX, maupun kesempatan magang profesional. Silakan kirimkan pesan lewat form di atas atau langsung kontak email saya.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Tombol Scroll to Top -->
+    <button id="scroll-top-btn" class="btn-scroll-top" type="button" aria-label="Kembali ke atas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Alvien's Portfolio</strong> &mdash; Dibuat murni dengan HTML5, CSS3, &amp; Vanilla JavaScript tanpa library eksternal.</p>
+    </footer>
+
+    <!-- Script Utama -->
+    <script src="./js/main.js"></script>
+</body>
 </html>

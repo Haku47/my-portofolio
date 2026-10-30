@@ -1,97 +1,180 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alvien's Portfolio | Proyek</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <!-- Header & Navigasi -->
-        <header>
-            <nav class="navbar">
-                <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="projects.html" class="active">Proyek</a></li>
-                    <li><a href="contact.html">Kontak</a></li>
-                </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koleksi proyek web aplikasi dan desain antarmuka oleh Alviensyah Mohammad.">
+    <title>Alvien's Portfolio | Proyek</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e2b714'/><text y='.72em' x='50%' text-anchor='middle' font-size='56' font-family='system-ui,sans-serif' font-weight='bold' fill='%231e1e24'>A</text></svg>">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="dark-mode">
+    <!-- Header & Navigasi -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="projects.html" class="active">Proyek</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
 
-                <!-- Tombol Toggle Tema Modern -->
+            <div class="nav-actions">
+                <!-- Tombol Toggle Tema (JS Event: Click) -->
                 <button id="theme-toggle" class="btn-theme" type="button" aria-label="Ganti Tema">
-                <!-- Ikon Matahari (Tampil saat Dark Mode aktif untuk opsi ubah ke Terang) -->
-                <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
 
-                <!-- Ikon Bulan (Tampil saat Light Mode aktif untuk opsi ubah ke Gelap) -->
-                <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-
-                <span id="theme-text"></span>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <span id="theme-text">Mode Terang</span>
                 </button>
-            </nav>
-        </header>
 
-        <main class="container">
-            <section class="page-header">
-                <h1>Koleksi Proyek</h1>
-                <p>Berikut adalah beberapa aplikasi dan antarmuka web yang saya pernah buat.</p>
+                <!-- Tombol Menu Mobile Hamburger (JS Event: Click) -->
+                <button id="mobile-menu-btn" class="btn-mobile-menu" type="button" aria-label="Buka Navigasi" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-                <!-- Fitur JS dengan Filter Kategori -->
+    <!-- Konten Utama -->
+    <main class="container">
+        <section class="page-header">
+            <h1>Koleksi Proyek</h1>
+            <p>Eksplorasi aplikasi web dan konsep antarmuka pengguna yang telah saya buat dengan fokus pada performa dan estetika.</p>
+
+            <!-- Filter & Pencarian Dinamis (JS Events: Click & Input) -->
+            <div class="filter-search-wrap">
+                <!-- Search Box Interaktif -->
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="project-search" placeholder="Cari nama proyek atau teknologi..." aria-label="Cari proyek">
+                </div>
+
+                <!-- Tombol Filter Kategori -->
                 <div class="filter-container">
                     <button class="filter-btn active" data-category="all">Semua</button>
                     <button class="filter-btn" data-category="app">Web App</button>
                     <button class="filter-btn" data-category="ui">UI/Design</button>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Grid Kartu Proyek -->
-            <section class="projects-grid">
-                <!-- Item 1 -->
-                <article class="project-card" data-category="app">
-                    <div class="project-info">
-                        <span class="badge">Web App</span>
-                        <h3>Wibupedia</h3>
-                        <p>Aplikasi Web katalog Anime dengan semua data katalog anime terbesar.</p>
-                        <div class="tags">
-                            <span>Vue 3</span>
-                            <span>TypeScript</span>
-                            <span>Tailwind CSS v4</span>
-                        </div>
+        <!-- Grid Kartu Proyek -->
+        <section class="projects-grid" id="projects-grid">
+            <!-- Proyek 1: Wibupedia -->
+            <article class="project-card" data-category="app" data-id="wibupedia">
+                <div class="project-banner-placeholder">
+                    <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="project-info">
+                    <span class="badge">Web App</span>
+                    <h3>Wibupedia</h3>
+                    <p>Aplikasi web katalog anime interaktif dengan sistem pencarian real-time, filter genre, dan rincian data anime terkini.</p>
+                    <div class="tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>REST API</span>
                     </div>
-                </article>
+                </div>
+                <div class="project-card-footer">
+                    <button class="btn-card-action btn-detail" data-project-id="wibupedia">Detail Proyek</button>
+                    <a href="https://github.com/Haku47" target="_blank" rel="noopener" class="btn-card-action btn-code">GitHub</a>
+                </div>
+            </article>
 
-                <!-- Item 2 -->
-                <article class="project-card" data-category="app">
-                    <div class="project-info">
-                        <span class="badge">Web App</span>
-                        <h3>TanyaPalapa AI</h3>
-                        <p>Aplikasi Web berbasis AI yang bisa menjawab apapun.</p>
-                        <div class="tags">
-                            <span>Vue 3</span>
-                            <span>TypeScript</span>
-                            <span>Tailwind CSS v4</span>
-                            <span>Model Agent</span>
-                        </div>
+            <!-- Proyek 2: TanyaPalapa AI -->
+            <article class="project-card" data-category="app" data-id="tanyapalapa">
+                <div class="project-banner-placeholder">
+                    <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <div class="project-info">
+                    <span class="badge">Web App</span>
+                    <h3>TanyaPalapa AI</h3>
+                    <p>Antarmuka web asisten AI interaktif dengan tata letak chat responsif, riwayat percakapan, dan preset prompt cerdas.</p>
+                    <div class="tags">
+                        <span>JavaScript</span>
+                        <span>CSS Grid</span>
+                        <span>UI Design</span>
+                        <span>AI Agent</span>
                     </div>
-                </article>
-            </section>
-        </main>
+                </div>
+                <div class="project-card-footer">
+                    <button class="btn-card-action btn-detail" data-project-id="tanyapalapa">Detail Proyek</button>
+                    <a href="https://github.com/Haku47" target="_blank" rel="noopener" class="btn-card-action btn-code">GitHub</a>
+                </div>
+            </article>
+        </section>
 
-        <footer>
-            <p>&copy; 2026 Alvien's Portfolio, Dibuat dengan HTML dan CSS, JavaScript Murni.</p>
-        </footer>
+        <!-- Pesan ketika tidak ada proyek yang cocok -->
+        <div id="no-projects" class="empty-state hidden">
+            <p>Tidak ditemukan proyek yang cocok dengan kata kunci atau filter yang Anda pilih.</p>
+        </div>
+    </main>
 
-        <script src="./js/main.js"></script>
-    </body>
+    <!-- Modal Detail Proyek (JS Event: Click, Keydown Escape) -->
+    <div id="project-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-container">
+            <button id="modal-close-btn" class="modal-close" type="button" aria-label="Tutup Detail Proyek">&times;</button>
+            <div class="modal-header">
+                <span id="modal-badge" class="badge">Kategori</span>
+                <h2 id="modal-title">Judul Proyek</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modal-description" class="modal-desc">Deskripsi lengkap proyek akan tampil di sini.</p>
+                <div class="modal-section">
+                    <h4>Fitur &amp; Karakteristik Utama:</h4>
+                    <ul id="modal-features" class="modal-features-list"></ul>
+                </div>
+                <div class="modal-section">
+                    <h4>Teknologi yang Digunakan:</h4>
+                    <div id="modal-tags" class="tags"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-github" href="https://github.com/Haku47" target="_blank" rel="noopener" class="btn btn-primary">Buka Repository</a>
+                <button id="modal-close-action" type="button" class="btn btn-secondary">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tombol Scroll to Top -->
+    <button id="scroll-top-btn" class="btn-scroll-top" type="button" aria-label="Kembali ke atas">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Alvien's Portfolio</strong> &mdash; Dibuat murni dengan HTML5, CSS3, &amp; Vanilla JavaScript tanpa library eksternal.</p>
+    </footer>
+
+    <!-- Script Utama -->
+    <script src="./js/main.js"></script>
+</body>
 </html>
