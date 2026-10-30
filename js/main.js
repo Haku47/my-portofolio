@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * ============================================================================ */
   const projectDatabase = {
     wibupedia: {
-      title: 'Wibupedia Catalog',
+      title: 'WibuPedia',
       category: 'Web App',
       description: 'Aplikasi katalog anime berbasis website yang memungkinkan pengguna mencari dan menelusuri data anime terlengkap, jadwal rilis, rating komunitas, hingga sinopsis episode secara instan.',
       features: [
