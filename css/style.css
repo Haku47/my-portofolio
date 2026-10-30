@@ -883,6 +883,29 @@ body.dark-mode .btn-theme .moon-icon {
   padding: 2rem;
   transform: translateY(0);
   transition: transform 0.25s ease;
+
+  /* Modern Slim Scrollbar (Firefox & Standar CSS) */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+/* Modern Slim Scrollbar (Chrome, Safari, Edge, Brave) */
+.modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color);
 }
 
 .modal-close {
