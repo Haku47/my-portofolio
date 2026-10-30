@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alvien's Portfolio | Beranda</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <!-- Header & Navigasi -->
+        <header>
+            <nav class="navbar">
+                <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="projects.html">Proyek</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+
+        <!-- Tombol Toggle Tema Modern -->
+        <button id="theme-toggle" class="btn-theme" type="button" aria-label="Ganti Tema">
+        <!-- Ikon Matahari (Tampil saat Dark Mode aktif untuk opsi ubah ke Terang) -->
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+
+        <!-- Ikon Bulan (Tampil saat Light Mode aktif untuk opsi ubah ke Gelap) -->
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+
+        <span id="theme-text"></span>
+        </button>
+            </nav>
+        </header>
+
+        <!-- Konten Utama -->
+        <main class="container">
+            <!-- Hero Section -->
+            <section class="Hero">
+                <div class="hero-text">
+                    <p class="greeting">Halo, saya</p>
+                    <h1>Alviensyah Mohammad</h1>
+                    <p class="bio">
+                        Fokus di bidang Rekayasa Perangkat Lunak, tidak hanya juga aktif sebagai Frontend Developer karena suka eksplorasi pembuatan aplikasi web. Selain itu bisa membangun antarmuka web yang rapi, responsif, dan interaktif.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-primary">Lihat Karya</a>
+                        <a href="contact.html" class="btn btn-secondary">Hubungi Saya</a>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Ringkasan Skills -->
+        <section class="skills-section">
+        <div class="section-title-wrap">
+            <h2>Skill Utama</h2>
+            <p>Fondasi teknologi yang saya kuasai dan gunakan dalam pengembangan web.</p>
+        </div>
+
+        <div class="skills-grid">
+            <!-- Kartu 1 -->
+            <div class="skills-card">
+            <div class="skill-header">
+                <span class="skill-dot"></span>
+                <h3>HTML5</h3>
+            </div>
+            <p class="skill-desc">Semantic Elements, Accessible Web (a11y), Form Validation.</p>
+            <span class="skill-tag">Structure</span>
+            </div>
+
+            <!-- Kartu 2 -->
+            <div class="skills-card">
+            <div class="skill-header">
+                <span class="skill-dot"></span>
+                <h3>CSS3</h3>
+            </div>
+            <p class="skill-desc">Flexbox, CSS Grid, Responsive Design, CSS Variables.</p>
+            <span class="skill-tag">Styling</span>
+            </div>
+
+            <!-- Kartu 3 -->
+            <div class="skills-card">
+            <div class="skill-header">
+                <span class="skill-dot"></span>
+                <h3>JavaScript</h3>
+            </div>
+            <p class="skill-desc">DOM Manipulation, Event Handling, LocalStorage, ES6+.</p>
+            <span class="skill-tag">Logic</span>
+            </div>
+
+            <!-- Kartu 4 -->
+            <div class="skills-card">
+            <div class="skill-header">
+                <span class="skill-dot"></span>
+                <h3>Git & GitHub</h3>
+            </div>
+            <p class="skill-desc">Version Control, Branching, Workflow Kolaborasi Tim.</p>
+            <span class="skill-tag">Tooling</span>
+            </div>
+        </div>
+        </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Alvien's Portfolio, Dibuat dengan HTML dan CSS, JavaScript Murni.</p>
+        </footer>
+
+        <!-- Script -->
+        <script src="./js/main.js"></script>
+    </body>
+</html>

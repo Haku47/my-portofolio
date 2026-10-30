@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alvien's Portfolio | Proyek</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <!-- Header & Navigasi -->
+        <header>
+            <nav class="navbar">
+                <a href="index.html" class="logo">Alvien's<span> Portfolio</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="projects.html" class="active">Proyek</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+
+                <!-- Tombol Toggle Tema Modern -->
+                <button id="theme-toggle" class="btn-theme" type="button" aria-label="Ganti Tema">
+                <!-- Ikon Matahari (Tampil saat Dark Mode aktif untuk opsi ubah ke Terang) -->
+                <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+
+                <!-- Ikon Bulan (Tampil saat Light Mode aktif untuk opsi ubah ke Gelap) -->
+                <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+
+                <span id="theme-text"></span>
+                </button>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="page-header">
+                <h1>Koleksi Proyek</h1>
+                <p>Berikut adalah beberapa aplikasi dan antarmuka web yang saya pernah buat.</p>
+
+                <!-- Fitur JS dengan Filter Kategori -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-category="all">Semua</button>
+                    <button class="filter-btn" data-category="app">Web App</button>
+                    <button class="filter-btn" data-category="ui">UI/Design</button>
+                </div>
+            </section>
+
+            <!-- Grid Kartu Proyek -->
+            <section class="projects-grid">
+                <!-- Item 1 -->
+                <article class="project-card" data-category="app">
+                    <div class="project-info">
+                        <span class="badge">Web App</span>
+                        <h3>Wibupedia</h3>
+                        <p>Aplikasi Web katalog Anime dengan semua data katalog anime terbesar.</p>
+                        <div class="tags">
+                            <span>Vue 3</span>
+                            <span>TypeScript</span>
+                            <span>Tailwind CSS v4</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 2 -->
+                <article class="project-card" data-category="app">
+                    <div class="project-info">
+                        <span class="badge">Web App</span>
+                        <h3>TanyaPalapa AI</h3>
+                        <p>Aplikasi Web berbasis AI yang bisa menjawab apapun.</p>
+                        <div class="tags">
+                            <span>Vue 3</span>
+                            <span>TypeScript</span>
+                            <span>Tailwind CSS v4</span>
+                            <span>Model Agent</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Alvien's Portfolio, Dibuat dengan HTML dan CSS, JavaScript Murni.</p>
+        </footer>
+
+        <script src="./js/main.js"></script>
+    </body>
+</html>
