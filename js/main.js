@@ -1,6 +1,6 @@
 /**
  * ==============================================================================
- * main.js - Script Interaktivitas Portfolio Pribadi
+ * main.js - Script Interaktivitas Portofolio Pribadi
  * Dibangun murni dengan Vanilla JavaScript (ES6+) tanpa framework/library tambahan.
  * 
  * Daftar Fitur & JavaScript Events:
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Baca preferensi tersimpan dari LocalStorage (default dark-mode)
-  const savedTheme = localStorage.getItem('alvien_portfolio_theme');
+  const savedTheme = localStorage.getItem('alvien_portofolio_theme');
   if (savedTheme === 'light') {
     updateThemeUI(false);
   } else {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.addEventListener('click', () => {
       const willBeDark = !body.classList.contains('dark-mode');
       updateThemeUI(willBeDark);
-      localStorage.setItem('alvien_portfolio_theme', willBeDark ? 'dark' : 'light');
+      localStorage.setItem('alvien_portofolio_theme', willBeDark ? 'dark' : 'light');
     });
   }
 
