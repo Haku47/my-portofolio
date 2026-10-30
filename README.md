@@ -1,8 +1,8 @@
-# Portfolio Pribadi - Alviensyah Mohammad 🚀
+# Portofolio Pribadi - Alviensyah Mohammad 🚀
 
-Website portfolio pribadi sederhana yang dibangun dari awal (*from scratch*) murni menggunakan **HTML5 semantik**, **CSS3 modern**, dan **Vanilla JavaScript (ES6+)** tanpa bantuan framework (seperti Bootstrap, Tailwind, React, Vue) maupun library/CDN eksternal.
+Website portofolio pribadi sederhana yang dibangun dari awal murni menggunakan **HTML5 semantik**, **CSS3 modern**, dan **Vanilla JavaScript (ES6+)** tanpa bantuan framework (seperti Bootstrap, Tailwind, React, Vue) maupun library/CDN eksternal.
 
-Proyek ini dibuat untuk memenuhi penugasan pembuatan website portfolio yang rapi, interaktif, responsif, dan mudah diperiksa.
+Proyek ini dibuat untuk memenuhi penugasan pembuatan website portofolio yang rapi, interaktif, responsif, dan mudah diperiksa.
 
 ---
 
@@ -20,7 +20,7 @@ Proyek ini dibuat untuk memenuhi penugasan pembuatan website portfolio yang rapi
 ## 📂 Struktur File & Folder
 
 ```text
-my-portfolio/
+my-portofolio/
 ├── index.html          # Halaman Beranda (Hero, Bio, Skills, Sorotan Proyek)
 ├── projects.html       # Halaman Proyek (Koleksi Proyek, Filter Kategori, Pencarian, Modal)
 ├── contact.html        # Halaman Kontak (Formulir Validasi, Salin Email, Media Sosial, FAQ)
@@ -98,9 +98,9 @@ Tidak memerlukan instalasi package manager (`npm` / `yarn`) maupun build step.
 ### Cara 1: Buka Langsung di Browser
 1. Unduh atau *clone* repository ini:
    ```bash
-   git clone https://github.com/Haku47/my-portfolio.git
+   git clone https://github.com/Haku47/my-portofolio.git
    ```
-2. Buka folder `my-portfolio`.
+2. Buka folder `my-portofolio`.
 3. Klik ganda pada file `index.html` untuk langsung membuka di peramban favorit Anda (Chrome, Edge, Firefox, Safari).
 
 ### Cara 2: Menggunakan Live Server (VS Code)
