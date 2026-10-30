@@ -124,5 +124,5 @@ Buka browser di `http://localhost:3000`.
 - **Instagram:** [@alvien1939](https://www.instagram.com/alvien1939)
 
 ---
-*Dibuat dengan dedikasi dan kode murni untuk penugasan Web Portfolio.*
+*Dibuat dengan dedikasi dan kode murni untuk penugasan Web Portofolio.*
 
