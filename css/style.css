@@ -1,8 +1,3 @@
-/* ==========================================================================
-   CSS VARIABLES & TEMA DASAR
-   Desain bertema gelap default terinspirasi Monkeytype / Minimalis Elegan
-   Warna Aksen: Kuning Keemasan (#e2b714)
-   ========================================================================== */
 :root {
   --bg-primary: #f8fafc;
   --bg-surface: #ffffff;
@@ -47,9 +42,7 @@ body.dark-mode {
   --code-text: #d1d0c5;
 }
 
-/* ==========================================================================
-   RESET & DASAR
-   ========================================================================== */
+/* Reset & Dasar */
 * {
   margin: 0;
   padding: 0;
@@ -76,9 +69,7 @@ img, svg {
   vertical-align: middle;
 }
 
-/* ==========================================================================
-   HEADER & NAVIGASI
-   ========================================================================== */
+/* Header & Navigasi */
 header {
   background-color: var(--bg-surface);
   border-bottom: 1px solid var(--border-color);
@@ -244,9 +235,7 @@ body.dark-mode .btn-theme .moon-icon {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* ==========================================================================
-   LAYOUT UTAMA & CONTAINER
-   ========================================================================== */
+/* Layout Utama */
 .container {
   max-width: 1050px;
   margin: 0 auto;
@@ -271,9 +260,7 @@ body.dark-mode .btn-theme .moon-icon {
   max-width: 650px;
 }
 
-/* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
+/* Hero Section */
 .hero {
   padding: 1.5rem 0 3.5rem;
 }
@@ -347,7 +334,7 @@ body.dark-mode .btn-theme .moon-icon {
   flex-wrap: wrap;
 }
 
-/* Hero Terminal / Code Preview Card */
+/* Hero Code */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -409,9 +396,7 @@ body.dark-mode .btn-theme .moon-icon {
 .code-property { color: #38bdf8; }
 .code-string { color: #a3e635; }
 
-/* ==========================================================================
-   TOMBOL & INTERAKSI UMUM
-   ========================================================================== */
+/* TOmbol & Interaksi */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -510,9 +495,7 @@ body.dark-mode .btn-theme .moon-icon {
   gap: 0.55rem;
 }
 
-/* ==========================================================================
-   SKILLS SECTION (BERANDA)
-   ========================================================================== */
+/* Skills */
 .skills-section {
   margin-top: 4.5rem;
   padding-top: 2.5rem;
@@ -610,16 +593,14 @@ body.dark-mode .btn-theme .moon-icon {
   border-radius: var(--radius-sm);
 }
 
-/* Featured Section on Home */
+/* Featured Section */
 .featured-section {
   margin-top: 4.5rem;
   padding-top: 2.5rem;
   border-top: 1px solid var(--border-color);
 }
 
-/* ==========================================================================
-   PROYEK (PROJECTS PAGE)
-   ========================================================================== */
+/* Project */
 .filter-search-wrap {
   display: flex;
   flex-direction: column;
@@ -848,9 +829,7 @@ body.dark-mode .btn-theme .moon-icon {
   display: none;
 }
 
-/* ==========================================================================
-   MODAL DETAIL PROYEK (JAVASCRIPT EVENT INTERAKTIF)
-   ========================================================================== */
+/* Modal Detail */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -984,9 +963,7 @@ body.dark-mode .btn-theme .moon-icon {
   border-top: 1px solid var(--border-color);
 }
 
-/* ==========================================================================
-   KONTAK (CONTACT PAGE)
-   ========================================================================== */
+/* Kontak */
 .contact-layout {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -1244,9 +1221,7 @@ body.dark-mode .btn-theme .moon-icon {
   display: block;
 }
 
-/* ==========================================================================
-   TOMBOL SCROLL TO TOP
-   ========================================================================== */
+/* Tombol Scroll To Top */
 .btn-scroll-top {
   position: fixed;
   bottom: 2rem;
@@ -1283,9 +1258,7 @@ body.dark-mode .btn-theme .moon-icon {
   box-shadow: 0 6px 18px rgba(226, 183, 20, 0.35);
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
+/* Footer */
 footer {
   border-top: 1px solid var(--border-color);
   padding: 1.75rem 1.5rem;
@@ -1301,9 +1274,7 @@ footer strong {
   color: var(--accent-color);
 }
 
-/* ==========================================================================
-   RESPONSIVITAS (MEDIA QUERIES)
-   ========================================================================== */
+/* Responsive Mobile & Tablet */
 @media (max-width: 860px) {
   .hero-content {
     grid-template-columns: 1fr;
